@@ -12,7 +12,7 @@ use InvalidArgumentException;
  * @author  Shahrad Elahi (https://github.com/shahradelahi)
  * @license https://github.com/utilities-php/common/blob/master/LICENSE (MIT License)
  */
-class Validator
+class Validation
 {
 
     /**
@@ -124,28 +124,6 @@ class Validator
     public static function isIp(string $ip): bool
     {
         return filter_var($ip, FILTER_VALIDATE_IP);
-    }
-
-    /**
-     * Check if the given string is a valid IPv4 address
-     *
-     * @param string $ip
-     * @return bool
-     */
-    public static function isIpv4(string $ip): bool
-    {
-        return filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4);
-    }
-
-    /**
-     * Check if the given string is a valid IPv6 address
-     *
-     * @param string $ip
-     * @return bool
-     */
-    public static function isIpv6(string $ip): bool
-    {
-        return filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6);
     }
 
     /**

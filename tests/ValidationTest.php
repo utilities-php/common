@@ -4,9 +4,9 @@ declare(strict_types=1);
 namespace UtilitiesTests\Common;
 
 use PHPUnit\Framework\TestCase;
-use Utilities\Common\Validator;
+use Utilities\Common\Validation;
 
-class ValidatorTest extends TestCase
+class ValidationTest extends TestCase
 {
 
     public function testValidateType()
@@ -17,13 +17,13 @@ class ValidatorTest extends TestCase
             'is_admin' => true,
         ];
 
-        $this->assertTrue(Validator::validateType($arr, [
+        $this->assertTrue(Validation::validateType($arr, [
             'name' => 'string',
             'age' => 'integer|string',
             'is_admin' => 'boolean',
         ]));
 
-        $this->assertFalse(Validator::validateType($arr, [
+        $this->assertFalse(Validation::validateType($arr, [
             'name' => 'string',
             'age' => 'string',
             'is_admin' => 'boolean',
